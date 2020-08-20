@@ -1,0 +1,51 @@
+
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+   
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        
+        <th>Id</th>
+        <th (click)="sort('name')">Name <i class="fa fa-fw fa-sort"></i> Cick on Name to Sort
+
+          <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by name">
+          </div>
+
+          <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th>Department
+
+          <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Get distinct departments ">
+          </div>
+          
+
+        </th>
+        <th (click)="sort('joining_date')">Joining Date<b></b> <i class="fa fa-fw fa-sort"></i>
+          <span class="glyphicon sort-icon" *ngIf="key =='joining_date'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+
+        
+      </tr>
+      </thead>
+      <tbody>
+        
+      <tr *ngFor="let hero of candidate_data | orderBy: key : reverse | filter:searchText as result " >
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}}</td>
+        <td>{{hero.department}}</td>
+          <td>{{hero.joining_date | date}}</td>
+      </tr>
+      </tbody>
+      <button class="btn btn-primary btn-block" (click)="remove(1)" >Remove all candidates </button>
+    </table>
+
+   
+    
+  </div>
+</div>
