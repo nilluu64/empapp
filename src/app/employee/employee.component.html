@@ -42,10 +42,19 @@
           <td>{{hero.joining_date | date}}</td>
       </tr>
       </tbody>
-      <button class="btn btn-primary btn-block" (click)="remove(1)" >Remove all candidates </button>
-    </table>
 
-   
+      
+    </table>
     
+    
+    
+
+{{result | json}}}
+
   </div>
+  <div style="text-align:center;">
+       
+      <button class="btn btn-primary btn-block" (click)="remove(1)" >Remove all candidates </button>
+      <button class="btn btn-primary btn-block" (click)="finddept()" >count </button>
+      </div>
 </div>

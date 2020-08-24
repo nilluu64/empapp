@@ -10,12 +10,16 @@ import { Ng2OrderModule } from "ng2-order-pipe";
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilteredCountPipe } from './filtered-count-.pipe';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     FilteredCountPipe,
     DashboardComponent,
+    AboutComponent,
+    LoginComponent,
     
   ],
   imports: [
